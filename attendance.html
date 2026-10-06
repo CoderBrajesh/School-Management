@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Attendance - School Management System</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link rel="stylesheet" href="css/attendance.css">
+
+</head>
+
+
+<body>
+
+    <div class="dashboard-container">
+
+
+        <!-- SIDEBAR -->
+
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-logo">
+
+                <div class="logo-icon">
+                    🎓
+                </div>
+
+                <div>
+
+                    <h2>DSP School</h2>
+
+                    <span>
+                        Management System
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <p class="menu-title">
+                    MAIN MENU
+                </p>
+
+
+                <a href="dashboard.html" class="nav-link">
+                    <span class="nav-icon">📊</span>
+                    <span>Dashboard</span>
+                </a>
+
+
+                <a href="students.html" class="nav-link">
+                    <span class="nav-icon">👨‍🎓</span>
+                    <span>Students</span>
+                </a>
+
+
+                <a href="teachers.html" class="nav-link">
+                    <span class="nav-icon">👩‍🏫</span>
+                    <span>Teachers</span>
+                </a>
+
+
+                <a href="attendance.html" class="nav-link active">
+                    <span class="nav-icon">📅</span>
+                    <span>Attendance</span>
+                </a>
+
+
+                <a href="classes.html" class="nav-link">
+                    <span class="nav-icon">📚</span>
+                    <span>Classes</span>
+                </a>
+
+
+                <p class="menu-title">
+                    ACADEMICS
+                </p>
+
+
+                <a href="exams.html" class="nav-link">
+                    <span class="nav-icon">📝</span>
+                    <span>Examinations</span>
+                </a>
+
+
+                <a href="results.html" class="nav-link">
+                    <span class="nav-icon">📈</span>
+                    <span>Results</span>
+                </a>
+
+
+                <p class="menu-title">
+                    MANAGEMENT
+                </p>
+
+
+                <a href="fees.html" class="nav-link">
+                    <span class="nav-icon">💰</span>
+                    <span>Fees</span>
+                </a>
+
+
+                <a href="notices.html" class="nav-link">
+                    <span class="nav-icon">📢</span>
+                    <span>Notice Board</span>
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <button class="logout-button" id="logoutButton">
+
+                    <span>🚪</span>
+
+                    <span>Logout</span>
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- MAIN CONTENT -->
+
+
+        <main class="main-content">
+
+
+            <!-- HEADER -->
+
+            <header class="top-header">
+
+                <div class="header-left">
+
+                    <button class="menu-toggle" id="menuToggle">
+                        ☰
+                    </button>
+
+                    <div>
+
+                        <h1>
+                            Attendance
+                        </h1>
+
+                        <p>
+                            Manage student attendance
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="header-right">
+
+                    <button class="notification-button">
+                        🔔
+                    </button>
+
+
+                    <div class="admin-profile">
+
+                        <div class="profile-avatar">
+                            A
+                        </div>
+
+                        <div class="profile-info">
+
+                            <strong>
+                                Administrator
+                            </strong>
+
+                            <span>
+                                Admin
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- ATTENDANCE CONTENT -->
+
+
+            <section class="attendance-page">
+
+
+                <!-- PAGE TITLE -->
+
+                <div class="attendance-page-header">
+
+                    <div>
+
+                        <h2>
+                            Attendance Management
+                        </h2>
+
+                        <p>
+                            Mark and manage daily student attendance
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FILTER PANEL -->
+
+                <div class="attendance-filter-card">
+
+
+                    <div class="attendance-filter-group">
+
+                        <label>
+                            Select Date
+                        </label>
+
+                        <input type="date" id="attendanceDate">
+
+                    </div>
+
+
+                    <div class="attendance-filter-group">
+
+                        <label>
+                            Select Class
+                        </label>
+
+                        <select id="attendanceClass">
+
+                            <option value="">
+                                Select Class
+                            </option>
+
+                            <option>
+                                Class 1
+                            </option>
+
+                            <option>
+                                Class 2
+                            </option>
+
+                            <option>
+                                Class 3
+                            </option>
+
+                            <option>
+                                Class 4
+                            </option>
+
+                            <option>
+                                Class 5
+                            </option>
+
+                            <option>
+                                Class 6
+                            </option>
+
+                            <option>
+                                Class 7
+                            </option>
+
+                            <option>
+                                Class 8
+                            </option>
+
+                            <option>
+                                Class 9
+                            </option>
+
+                            <option>
+                                Class 10
+                            </option>
+
+                            <option>
+                                Class 11
+                            </option>
+
+                            <option>
+                                Class 12
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button class="load-attendance-button" id="loadAttendance">
+
+                        Load Students
+
+                    </button>
+
+                </div>
+
+
+
+
+                <!-- ATTENDANCE STATISTICS -->
+
+
+                <div class="attendance-stat-grid">
+
+
+                    <div class="attendance-stat-card">
+
+                        <div class="attendance-stat-icon total">
+                            👨‍🎓
+                        </div>
+
+                        <div>
+
+                            <p>
+                                Total Students
+                            </p>
+
+                            <h3 id="totalCount">
+                                0
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="attendance-stat-card">
+
+                        <div class="attendance-stat-icon present">
+                            ✅
+                        </div>
+
+                        <div>
+
+                            <p>
+                                Present
+                            </p>
+
+                            <h3 id="presentCount">
+                                0
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="attendance-stat-card">
+
+                        <div class="attendance-stat-icon absent">
+                            ❌
+                        </div>
+
+                        <div>
+
+                            <p>
+                                Absent
+                            </p>
+
+                            <h3 id="absentCount">
+                                0
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="attendance-stat-card">
+
+                        <div class="attendance-stat-icon leave">
+                            🟡
+                        </div>
+
+                        <div>
+
+                            <p>
+                                Leave
+                            </p>
+
+                            <h3 id="leaveCount">
+                                0
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="attendance-stat-card">
+
+                        <div class="attendance-stat-icon percentage">
+                            📊
+                        </div>
+
+                        <div>
+
+                            <p>
+                                Attendance
+                            </p>
+
+                            <h3 id="attendancePercentage">
+                                0%
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+                <!-- ATTENDANCE TABLE -->
+
+
+                <div class="attendance-table-card">
+
+
+                    <div class="attendance-table-header">
+
+                        <div>
+
+                            <h3>
+                                Student Attendance
+                            </h3>
+
+                            <p id="attendanceTableInfo">
+                                Select date and class to load students
+                            </p>
+
+                        </div>
+
+
+                        <div class="attendance-actions">
+
+                            <button class="mark-all-present" id="markAllPresent">
+                                ✓ Mark All Present
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- TABLE -->
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        #
+                                    </th>
+
+                                    <th>
+                                        Student
+                                    </th>
+
+                                    <th>
+                                        Student ID
+                                    </th>
+
+                                    <th>
+                                        Class
+                                    </th>
+
+                                    <th>
+                                        Attendance Status
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="attendanceTableBody">
+
+                                <!-- JavaScript -->
+
+                            </tbody>
+
+                        </table>
+
+
+                        <!-- EMPTY STATE -->
+
+                        <div class="attendance-empty" id="attendanceEmpty">
+
+                            <div>
+                                📅
+                            </div>
+
+                            <h3>
+                                No Students Loaded
+                            </h3>
+
+                            <p>
+                                Select a date and class,
+                                then click "Load Students".
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SAVE BUTTON -->
+
+                    <div class="attendance-save-section">
+
+                        <button class="save-attendance-button" id="saveAttendance">
+
+                            💾 Save Attendance
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="js/attendance.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>School Management System - Login</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <!-- Left Section -->
+        <div class="login-left">
+
+            <div class="school-logo">
+                🎓
+            </div>
+
+            <h1>DSP Public School</h1>
+
+            <p>
+                School Management System
+            </p>
+
+            <div class="welcome-text">
+                <h2>Welcome Back!</h2>
+
+                <p>
+                    Manage students, teachers, attendance,
+                    examinations and school activities from
+                    one place.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- Right Section -->
+        <div class="login-right">
+
+            <div class="login-box">
+
+                <h2>Login</h2>
+
+                <p class="login-subtitle">
+                    Sign in to access your dashboard
+                </p>
+
+
+                <!-- Login Form -->
+                <form id="loginForm">
+
+                    <!-- Username -->
+                    <div class="form-group">
+
+                        <label for="username">
+                            Username
+                        </label>
+
+                        <input type="text" id="username" placeholder="Enter username" autocomplete="username">
+
+                        <small class="error-message" id="usernameError">
+                        </small>
+
+                    </div>
+
+
+                    <!-- Password -->
+                    <div class="form-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <div class="password-wrapper">
+
+                            <input type="password" id="password" placeholder="Enter password"
+                                autocomplete="current-password">
+
+                            <button type="button" id="togglePassword" class="password-toggle">
+                                👁
+                            </button>
+
+                        </div>
+
+                        <small class="error-message" id="passwordError">
+                        </small>
+
+                    </div>
+
+
+                    <!-- Remember Me -->
+                    <div class="login-options">
+
+                        <label class="remember-me">
+
+                            <input type="checkbox" id="rememberMe">
+
+                            <span>Remember me</span>
+
+                        </label>
+
+                        <a href="#" id="forgotPassword">
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+
+                    <!-- Login Button -->
+                    <button type="submit" class="login-button">
+
+                        Login
+
+                    </button>
+
+
+                    <!-- Login Message -->
+                    <p id="loginMessage" class="login-message">
+                    </p>
+
+                </form>
+
+
+                <!-- Demo Credentials -->
+                <div class="demo-login">
+
+                    <p>Demo Login</p>
+
+                    <span>
+                        Username: <strong>Brajesh</strong>
+                    </span>
+
+                    <span>
+                        Password: <strong>bks321</strong>
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/login.js"></script>
+
+</body>
+
+</html>

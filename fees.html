@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fees - DSP Public School</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/fees.css">
+</head>
+
+<body>
+
+
+    <!-- SIDEBAR -->
+
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-header">
+
+            <div class="school-logo">
+                DSP
+            </div>
+
+            <div>
+                <h2>DSP Public School</h2>
+                <span>School Management</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html">
+                <span>📊</span>
+                Dashboard
+            </a>
+
+            <a href="students.html">
+                <span>👨‍🎓</span>
+                Students
+            </a>
+
+            <a href="teachers.html">
+                <span>👩‍🏫</span>
+                Teachers
+            </a>
+
+            <a href="attendance.html">
+                <span>📅</span>
+                Attendance
+            </a>
+
+            <a href="classes.html">
+                <span>📚</span>
+                Classes
+            </a>
+
+            <a href="exams.html">
+                <span>📝</span>
+                Examinations
+            </a>
+
+            <a href="results.html">
+                <span>📈</span>
+                Results
+            </a>
+
+            <a href="fees.html" class="active">
+                <span>💰</span>
+                Fees
+            </a>
+
+            <a href="notices.html">
+                <span>📢</span>
+                Notice Board
+            </a>
+
+        </nav>
+
+
+        <button class="logout-btn" id="logoutBtn">
+            🚪 Logout
+        </button>
+
+    </aside>
+
+
+
+    <!-- MAIN CONTENT -->
+
+
+    <main class="main-content">
+
+        <!-- HEADER -->
+
+        <header class="top-header">
+
+            <button class="menu-btn" id="menuBtn">
+                ☰
+            </button>
+
+
+            <div class="page-title">
+
+                <h1>Fees Management</h1>
+
+                <p>
+                    Manage student fee payments
+                </p>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <button class="notification-btn" id="notificationBtn">
+                    🔔
+                </button>
+
+
+                <div class="admin-profile">
+
+                    <div class="admin-avatar">
+                        A
+                    </div>
+
+                    <div>
+                        <strong>Admin</strong>
+
+                        <small>
+                            Administrator
+                        </small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- CONTENT -->
+
+
+        <section class="content-area">
+
+
+            <!-- STATISTICS -->
+
+            <div class="fee-stats">
+
+
+                <div class="fee-stat-card">
+
+                    <div class="stat-icon">
+                        💰
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Fees
+                        </span>
+
+                        <h2 id="totalFees">
+                            ₹0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="fee-stat-card">
+
+                    <div class="stat-icon">
+                        ✅
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Paid
+                        </span>
+
+                        <h2 id="totalPaid">
+                            ₹0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="fee-stat-card">
+
+                    <div class="stat-icon">
+                        ⏳
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Pending Fees
+                        </span>
+
+                        <h2 id="totalPending">
+                            ₹0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="fee-stat-card">
+
+                    <div class="stat-icon">
+                        👨‍🎓
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Fee Records
+                        </span>
+
+                        <h2 id="totalRecords">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TOOLBAR -->
+
+            <div class="fee-toolbar">
+
+
+                <div class="search-box">
+
+                    <span>
+                        🔍
+                    </span>
+
+                    <input type="text" id="searchFee" placeholder="Search student or ID...">
+
+                </div>
+
+
+                <select id="feeClassFilter">
+
+                    <option value="">
+                        All Classes
+                    </option>
+
+                    <option value="Class 1">Class 1</option>
+                    <option value="Class 2">Class 2</option>
+                    <option value="Class 3">Class 3</option>
+                    <option value="Class 4">Class 4</option>
+                    <option value="Class 5">Class 5</option>
+                    <option value="Class 6">Class 6</option>
+                    <option value="Class 7">Class 7</option>
+                    <option value="Class 8">Class 8</option>
+                    <option value="Class 9">Class 9</option>
+                    <option value="Class 10">Class 10</option>
+                    <option value="Class 11">Class 11</option>
+                    <option value="Class 12">Class 12</option>
+
+                </select>
+
+
+                <select id="feeStatusFilter">
+
+                    <option value="">
+                        All Status
+                    </option>
+
+                    <option value="Paid">
+                        Paid
+                    </option>
+
+                    <option value="Partial">
+                        Partial
+                    </option>
+
+                    <option value="Pending">
+                        Pending
+                    </option>
+
+                </select>
+
+
+                <button class="add-fee-btn" id="addFeeBtn">
+
+                    + Add Fee
+
+                </button>
+
+            </div>
+
+
+            <!-- FEE TABLE -->
+
+            <div class="table-container">
+
+
+                <div class="table-header">
+
+                    <div>
+
+                        <h2>
+                            Fee Records
+                        </h2>
+
+                        <p>
+                            Student fee payment records
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>#</th>
+
+                                <th>Student</th>
+
+                                <th>Student ID</th>
+
+                                <th>Class</th>
+
+                                <th>Total Fee</th>
+
+                                <th>Paid</th>
+
+                                <th>Pending</th>
+
+                                <th>Payment Date</th>
+
+                                <th>Method</th>
+
+                                <th>Status</th>
+
+                                <th>Actions</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="feeTableBody">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <div class="empty-state" id="emptyState">
+
+                    <div>
+                        💰
+                    </div>
+
+                    <h3>
+                        No Fee Records Found
+                    </h3>
+
+                    <p>
+                        Add a fee record to get started.
+                    </p>
+
+                    <button id="emptyAddBtn">
+                        + Add Fee
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- FEE MODAL -->
+
+
+    <div class="modal-overlay" id="feeModal">
+
+        <div class="fee-modal">
+
+
+            <!-- HEADER -->
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h2 id="modalTitle">
+                        Add Fee Record
+                    </h2>
+
+                    <p>
+                        Enter student fee information
+                    </p>
+
+                </div>
+
+
+                <button class="close-modal" id="closeModal">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <!-- FORM -->
+
+            <form id="feeForm">
+
+
+                <div class="form-grid">
+
+
+                    <!-- STUDENT -->
+
+                    <div class="form-group full-width">
+
+                        <label>
+                            Student
+                            <span>*</span>
+                        </label>
+
+                        <select id="studentSelect" required>
+
+                            <option value="">
+                                Select Student
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- TOTAL FEE -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Total Fee
+                            <span>*</span>
+                        </label>
+
+                        <input type="number" id="totalFee" min="0" placeholder="Example: 50000" required>
+
+                    </div>
+
+
+                    <!-- PAID -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Paid Amount
+                            <span>*</span>
+                        </label>
+
+                        <input type="number" id="paidAmount" min="0" placeholder="Example: 25000" required>
+
+                    </div>
+
+
+                    <!-- PENDING -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Pending Amount
+                        </label>
+
+                        <input type="number" id="pendingAmount" readonly placeholder="₹0">
+
+                    </div>
+
+
+                    <!-- PAYMENT DATE -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Payment Date
+                            <span>*</span>
+                        </label>
+
+                        <input type="date" id="paymentDate" required>
+
+                    </div>
+
+
+                    <!-- PAYMENT METHOD -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Payment Method
+                            <span>*</span>
+                        </label>
+
+                        <select id="paymentMethod" required>
+
+                            <option value="">
+                                Select Method
+                            </option>
+
+                            <option value="Cash">
+                                Cash
+                            </option>
+
+                            <option value="UPI">
+                                UPI
+                            </option>
+
+                            <option value="Bank Transfer">
+                                Bank Transfer
+                            </option>
+
+                            <option value="Card">
+                                Card
+                            </option>
+
+                            <option value="Cheque">
+                                Cheque
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- FEE TYPE -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Fee Type
+                            <span>*</span>
+                        </label>
+
+                        <select id="feeType" required>
+
+                            <option value="">
+                                Select Fee Type
+                            </option>
+
+                            <option value="Tuition Fee">
+                                Tuition Fee
+                            </option>
+
+                            <option value="Admission Fee">
+                                Admission Fee
+                            </option>
+
+                            <option value="Transport Fee">
+                                Transport Fee
+                            </option>
+
+                            <option value="Exam Fee">
+                                Exam Fee
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- NOTES -->
+
+                    <div class="form-group full-width">
+
+                        <label>
+                            Notes
+                        </label>
+
+                        <textarea id="feeNotes" rows="3" placeholder="Enter any additional information..."></textarea>
+
+                    </div>
+
+
+                    <!-- PAYMENT PREVIEW -->
+
+                    <div class="fee-preview full-width">
+
+                        <div>
+
+                            <span>
+                                Total
+                            </span>
+
+                            <strong id="previewTotal">
+                                ₹0
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Paid
+                            </span>
+
+                            <strong id="previewPaid">
+                                ₹0
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Pending
+                            </span>
+
+                            <strong id="previewPending">
+                                ₹0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- FOOTER -->
+
+                <div class="modal-footer">
+
+                    <button type="button" class="cancel-btn" id="cancelBtn">
+
+                        Cancel
+
+                    </button>
+
+
+                    <button type="submit" class="save-fee-btn">
+
+                        Save Fee
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/fees.js"></script>
+
+</body>
+
+</html>

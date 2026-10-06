@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teachers - School Management System</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/teachers.css">
+
+</head>
+
+
+<body>
+
+    <div class="dashboard-container">
+
+
+        <!-- SIDEBAR -->
+
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-logo">
+
+                <div class="logo-icon">
+                    🎓
+                </div>
+
+                <div>
+
+                    <h2>DSP Public School</h2>
+
+                    <span>
+                        Management System
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <p class="menu-title">
+                    MAIN MENU
+                </p>
+
+
+                <a href="dashboard.html" class="nav-link">
+
+                    <span class="nav-icon">📊</span>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+
+                <a href="students.html" class="nav-link">
+
+                    <span class="nav-icon">👨‍🎓</span>
+
+                    <span>Students</span>
+
+                </a>
+
+
+                <a href="teachers.html" class="nav-link active">
+
+                    <span class="nav-icon">👩‍🏫</span>
+
+                    <span>Teachers</span>
+
+                </a>
+
+
+                <a href="attendance.html" class="nav-link">
+
+                    <span class="nav-icon">📅</span>
+
+                    <span>Attendance</span>
+
+                </a>
+
+
+                <a href="classes.html" class="nav-link">
+
+                    <span class="nav-icon">📚</span>
+
+                    <span>Classes</span>
+
+                </a>
+
+
+                <p class="menu-title">
+                    ACADEMICS
+                </p>
+
+
+                <a href="exams.html" class="nav-link">
+
+                    <span class="nav-icon">📝</span>
+
+                    <span>Examinations</span>
+
+                </a>
+
+
+                <a href="results.html" class="nav-link">
+
+                    <span class="nav-icon">📈</span>
+
+                    <span>Results</span>
+
+                </a>
+
+
+                <p class="menu-title">
+                    MANAGEMENT
+                </p>
+
+
+                <a href="fees.html" class="nav-link">
+
+                    <span class="nav-icon">💰</span>
+
+                    <span>Fees</span>
+
+                </a>
+
+
+                <a href="notices.html" class="nav-link">
+
+                    <span class="nav-icon">📢</span>
+
+                    <span>Notice Board</span>
+
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <button class="logout-button" id="logoutButton">
+
+                    <span>🚪</span>
+
+                    <span>Logout</span>
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+
+
+        <!-- MAIN CONTENT -->
+
+
+        <main class="main-content">
+
+
+            <!-- HEADER -->
+
+            <header class="top-header">
+
+                <div class="header-left">
+
+                    <button class="menu-toggle" id="menuToggle">
+                        ☰
+                    </button>
+
+                    <div>
+
+                        <h1>
+                            Teachers
+                        </h1>
+
+                        <p>
+                            Manage school teaching staff
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="header-right">
+
+                    <button class="notification-button">
+                        🔔
+                    </button>
+
+
+                    <div class="admin-profile">
+
+                        <div class="profile-avatar">
+                            A
+                        </div>
+
+                        <div class="profile-info">
+
+                            <strong>
+                                Administrator
+                            </strong>
+
+                            <span>
+                                Admin
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+
+            <!-- TEACHER CONTENT -->
+
+
+            <section class="teacher-content">
+
+
+                <!-- PAGE HEADER -->
+
+                <div class="page-header">
+
+                    <div>
+
+                        <h2>
+                            Teacher Management
+                        </h2>
+
+                        <p>
+                            Add and manage teacher records
+                        </p>
+
+                    </div>
+
+
+                    <button class="add-teacher-button" id="openTeacherModal">
+
+                        <span>+</span>
+
+                        Add Teacher
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- STATISTICS -->
+
+                <div class="teacher-stats">
+
+
+                    <div class="teacher-stat-card">
+
+                        <div>
+
+                            <p>
+                                Total Teachers
+                            </p>
+
+                            <h3 id="totalTeachers">
+                                0
+                            </h3>
+
+                        </div>
+
+                        <div class="teacher-stat-icon">
+                            👩‍🏫
+                        </div>
+
+                    </div>
+
+
+                    <div class="teacher-stat-card">
+
+                        <div>
+
+                            <p>
+                                Active Teachers
+                            </p>
+
+                            <h3 id="activeTeachers">
+                                0
+                            </h3>
+
+                        </div>
+
+                        <div class="teacher-stat-icon active-teacher">
+                            ✅
+                        </div>
+
+                    </div>
+
+
+                    <div class="teacher-stat-card">
+
+                        <div>
+
+                            <p>
+                                Male Teachers
+                            </p>
+
+                            <h3 id="maleTeachers">
+                                0
+                            </h3>
+
+                        </div>
+
+                        <div class="teacher-stat-icon male-teacher">
+                            👨‍🏫
+                        </div>
+
+                    </div>
+
+
+                    <div class="teacher-stat-card">
+
+                        <div>
+
+                            <p>
+                                Female Teachers
+                            </p>
+
+                            <h3 id="femaleTeachers">
+                                0
+                            </h3>
+
+                        </div>
+
+                        <div class="teacher-stat-icon female-teacher">
+                            👩‍🏫
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SEARCH -->
+
+                <div class="teacher-toolbar">
+
+
+                    <div class="teacher-search">
+
+                        <span>
+                            🔍
+                        </span>
+
+                        <input type="text" id="searchTeacher" placeholder="Search teacher by name, ID or subject...">
+
+                    </div>
+
+
+                    <select id="filterSubject">
+
+                        <option value="all">
+                            All Subjects
+                        </option>
+
+                        <option value="Mathematics">
+                            Mathematics
+                        </option>
+
+                        <option value="Science">
+                            Science
+                        </option>
+
+                        <option value="English">
+                            English
+                        </option>
+
+                        <option value="Hindi">
+                            Hindi
+                        </option>
+
+                        <option value="Computer">
+                            Computer
+                        </option>
+
+                        <option value="Physics">
+                            Physics
+                        </option>
+
+                        <option value="Chemistry">
+                            Chemistry
+                        </option>
+
+                        <option value="Biology">
+                            Biology
+                        </option>
+
+                        <option value="Social Science">
+                            Social Science
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- TEACHER TABLE -->
+
+                <div class="teacher-table-card">
+
+
+                    <div class="teacher-table-header">
+
+                        <div>
+
+                            <h3>
+                                Teacher List
+                            </h3>
+
+                            <p>
+                                All registered teachers
+                            </p>
+
+                        </div>
+
+
+                        <span id="teacherResultCount">
+                            0 teachers
+                        </span>
+
+                    </div>
+
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Teacher
+                                    </th>
+
+                                    <th>
+                                        Teacher ID
+                                    </th>
+
+                                    <th>
+                                        Subject
+                                    </th>
+
+                                    <th>
+                                        Gender
+                                    </th>
+
+                                    <th>
+                                        Phone
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                    <th>
+                                        Action
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="teacherTableBody">
+
+                                <!-- JavaScript will insert data -->
+
+                            </tbody>
+
+                        </table>
+
+
+                        <!-- EMPTY STATE -->
+
+                        <div class="teacher-empty-state" id="teacherEmptyState">
+
+                            <div>
+                                👩‍🏫
+                            </div>
+
+                            <h3>
+                                No Teachers Found
+                            </h3>
+
+                            <p>
+                                Add your first teacher
+                                to get started.
+                            </p>
+
+                            <button id="emptyAddTeacher">
+                                Add Teacher
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+
+
+    <!-- TEACHER MODAL -->
+
+
+    <div class="teacher-modal-overlay" id="teacherModal">
+
+        <div class="teacher-modal">
+
+
+            <!-- MODAL HEADER -->
+
+            <div class="teacher-modal-header">
+
+                <div>
+
+                    <h2 id="teacherModalTitle">
+                        Add New Teacher
+                    </h2>
+
+                    <p>
+                        Enter teacher information
+                    </p>
+
+                </div>
+
+
+                <button class="teacher-close-modal" id="closeTeacherModal">
+                    ×
+                </button>
+
+            </div>
+
+
+
+            <!-- FORM -->
+
+            <form id="teacherForm">
+
+
+                <input type="hidden" id="editTeacherId">
+
+
+                <div class="teacher-form-grid">
+
+
+                    <!-- NAME -->
+
+                    <div class="teacher-form-group">
+
+                        <label>
+                            Full Name
+                            <span>*</span>
+                        </label>
+
+                        <input type="text" id="teacherName" placeholder="Enter teacher name">
+
+                        <small id="teacherNameError" class="teacher-form-error"></small>
+
+                    </div>
+
+
+                    <!-- DOB -->
+
+                    <div class="teacher-form-group">
+
+                        <label>
+                            Date of Birth
+                        </label>
+
+                        <input type="date" id="teacherDOB">
+
+                    </div>
+
+
+                    <!-- SUBJECT -->
+
+                    <div class="teacher-form-group">
+
+                        <label>
+                            Subject
+                            <span>*</span>
+                        </label>
+
+                        <select id="teacherSubject">
+
+                            <option value="">
+                                Select Subject
+                            </option>
+
+                            <option>
+                                Mathematics
+                            </option>
+
+                            <option>
+                                Science
+                            </option>
+
+                            <option>
+                                English
+                            </option>
+
+                            <option>
+                                Hindi
+                            </option>
+
+                            <option>
+                                Computer
+                            </option>
+
+                            <option>
+                                Physics
+                            </option>
+
+                            <option>
+                                Chemistry
+                            </option>
+
+                            <option>
+                                Biology
+                            </option>
+
+                            <option>
+                                Social Science
+                            </option>
+
+                        </select>
+
+                        <small id="teacherSubjectError" class="teacher-form-error"></small>
+
+                    </div>
+
+
+                    <!-- GENDER -->
+
+                    <div class="teacher-form-group">
+
+                        <label>
+                            Gender
+                            <span>*</span>
+                        </label>
+
+                        <select id="teacherGender">
+
+                            <option value="">
+                                Select Gender
+                            </option>
+
+                            <option value="Male">
+                                Male
+                            </option>
+
+                            <option value="Female">
+                                Female
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                        <small id="teacherGenderError" class="teacher-form-error"></small>
+
+                    </div>
+
+
+                    <!-- PHONE -->
+
+                    <div class="teacher-form-group">
+
+                        <label>
+                            Phone Number
+                        </label>
+
+                        <input type="tel" id="teacherPhone" placeholder="Enter phone number" maxlength="10">
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+
+                    <div class="teacher-form-group">
+
+                        <label>
+                            Email
+                        </label>
+
+                        <input type="email" id="teacherEmail" placeholder="Enter email address">
+
+                    </div>
+
+
+                    <!-- QUALIFICATION -->
+
+                    <div class="teacher-form-group">
+
+                        <label>
+                            Qualification
+                        </label>
+
+                        <input type="text" id="teacherQualification" placeholder="e.g. M.Sc, B.Ed">
+
+                    </div>
+
+
+                    <!-- EXPERIENCE -->
+
+                    <div class="teacher-form-group">
+
+                        <label>
+                            Experience
+                        </label>
+
+                        <input type="text" id="teacherExperience" placeholder="e.g. 5 Years">
+
+                    </div>
+
+
+                    <!-- ADDRESS -->
+
+                    <div class="teacher-form-group full-width">
+
+                        <label>
+                            Address
+                        </label>
+
+                        <textarea id="teacherAddress" rows="3" placeholder="Enter teacher address"></textarea>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ACTIONS -->
+
+                <div class="teacher-modal-actions">
+
+                    <button type="button" class="teacher-cancel-button" id="cancelTeacher">
+                        Cancel
+                    </button>
+
+                    <button type="submit" class="save-teacher-button">
+                        Save Teacher
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/teachers.js"></script>
+
+</body>
+
+</html>

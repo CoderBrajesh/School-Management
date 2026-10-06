@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Classes - DSP Public School</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/classes.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-header">
+            <div class="school-logo">DSP</div>
+
+            <div>
+                <h2>DSP Public School</h2>
+                <span>School Management</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html">
+                <span>📊</span>
+                Dashboard
+            </a>
+
+            <a href="students.html">
+                <span>👨‍🎓</span>
+                Students
+            </a>
+
+            <a href="teachers.html">
+                <span>👩‍🏫</span>
+                Teachers
+            </a>
+
+            <a href="attendance.html">
+                <span>📅</span>
+                Attendance
+            </a>
+
+            <a href="classes.html" class="active">
+                <span>📚</span>
+                Classes
+            </a>
+
+            <a href="exams.html">
+                <span>📝</span>
+                Examinations
+            </a>
+
+            <a href="results.html">
+                <span>📈</span>
+                Results
+            </a>
+
+            <a href="fees.html">
+                <span>💰</span>
+                Fees
+            </a>
+
+            <a href="notices.html">
+                <span>📢</span>
+                Notice Board
+            </a>
+
+        </nav>
+
+        <button class="logout-btn" id="logoutBtn">
+            🚪 Logout
+        </button>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Top Header -->
+        <header class="top-header">
+
+            <button class="menu-btn" id="menuBtn">
+                ☰
+            </button>
+
+            <div class="page-title">
+                <h1>Classes Management</h1>
+                <p>Manage classes, sections and subjects</p>
+            </div>
+
+            <div class="header-right">
+
+                <button class="notification-btn" id="notificationBtn">
+                    🔔
+                </button>
+
+                <div class="admin-profile">
+                    <div class="admin-avatar">
+                        A
+                    </div>
+
+                    <div>
+                        <strong>Admin</strong>
+                        <small>Administrator</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- Page Content -->
+        <section class="content-area">
+
+            <!-- Statistics -->
+            <div class="class-stats">
+
+                <div class="class-stat-card">
+                    <div class="stat-icon">📚</div>
+
+                    <div>
+                        <span>Total Classes</span>
+                        <h2 id="totalClasses">0</h2>
+                    </div>
+                </div>
+
+
+                <div class="class-stat-card">
+                    <div class="stat-icon">👨‍🎓</div>
+
+                    <div>
+                        <span>Total Students</span>
+                        <h2 id="totalStudents">0</h2>
+                    </div>
+                </div>
+
+
+                <div class="class-stat-card">
+                    <div class="stat-icon">📖</div>
+
+                    <div>
+                        <span>Total Subjects</span>
+                        <h2 id="totalSubjects">0</h2>
+                    </div>
+                </div>
+
+
+                <div class="class-stat-card">
+                    <div class="stat-icon">👨‍🏫</div>
+
+                    <div>
+                        <span>Class Teachers</span>
+                        <h2 id="totalClassTeachers">0</h2>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Toolbar -->
+            <div class="class-toolbar">
+
+                <div class="search-box">
+
+                    <span>🔍</span>
+
+                    <input
+                        type="text"
+                        id="searchClass"
+                        placeholder="Search class or section..."
+                    >
+
+                </div>
+
+
+                <select id="classFilter">
+
+                    <option value="">All Classes</option>
+                    <option value="Class 1">Class 1</option>
+                    <option value="Class 2">Class 2</option>
+                    <option value="Class 3">Class 3</option>
+                    <option value="Class 4">Class 4</option>
+                    <option value="Class 5">Class 5</option>
+                    <option value="Class 6">Class 6</option>
+                    <option value="Class 7">Class 7</option>
+                    <option value="Class 8">Class 8</option>
+                    <option value="Class 9">Class 9</option>
+                    <option value="Class 10">Class 10</option>
+                    <option value="Class 11">Class 11</option>
+                    <option value="Class 12">Class 12</option>
+
+                </select>
+
+
+                <button class="add-class-btn" id="addClassBtn">
+                    + Add Class
+                </button>
+
+            </div>
+
+
+            <!-- Classes Table -->
+            <div class="table-container">
+
+                <div class="table-header">
+
+                    <div>
+                        <h2>Class List</h2>
+                        <p>All classes and their details</p>
+                    </div>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>#</th>
+                                <th>Class</th>
+                                <th>Section</th>
+                                <th>Room</th>
+                                <th>Class Teacher</th>
+                                <th>Subjects</th>
+                                <th>Students</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="classesTableBody">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <div id="emptyState" class="empty-state">
+
+                    <div>📚</div>
+
+                    <h3>No Classes Found</h3>
+
+                    <p>
+                        Add your first class to start managing classes.
+                    </p>
+
+                    <button id="emptyAddBtn">
+                        + Add Class
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Add/Edit Class Modal -->
+    <div class="modal-overlay" id="classModal">
+
+        <div class="class-modal">
+
+            <div class="modal-header">
+
+                <div>
+                    <h2 id="modalTitle">Add New Class</h2>
+                    <p>Enter class information</p>
+                </div>
+
+                <button class="close-modal" id="closeModal">
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="classForm">
+
+                <div class="form-grid">
+
+                    <!-- Class -->
+                    <div class="form-group">
+
+                        <label>
+                            Class <span>*</span>
+                        </label>
+
+                        <select id="className" required>
+
+                            <option value="">Select Class</option>
+
+                            <option value="Class 1">Class 1</option>
+                            <option value="Class 2">Class 2</option>
+                            <option value="Class 3">Class 3</option>
+                            <option value="Class 4">Class 4</option>
+                            <option value="Class 5">Class 5</option>
+                            <option value="Class 6">Class 6</option>
+                            <option value="Class 7">Class 7</option>
+                            <option value="Class 8">Class 8</option>
+                            <option value="Class 9">Class 9</option>
+                            <option value="Class 10">Class 10</option>
+                            <option value="Class 11">Class 11</option>
+                            <option value="Class 12">Class 12</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Section -->
+                    <div class="form-group">
+
+                        <label>
+                            Section <span>*</span>
+                        </label>
+
+                        <select id="section" required>
+
+                            <option value="">Select Section</option>
+                            <option value="A">Section A</option>
+                            <option value="B">Section B</option>
+                            <option value="C">Section C</option>
+                            <option value="D">Section D</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Room -->
+                    <div class="form-group">
+
+                        <label>Room Number</label>
+
+                        <input
+                            type="text"
+                            id="room"
+                            placeholder="Example: 101"
+                        >
+
+                    </div>
+
+
+                    <!-- Class Teacher -->
+                    <div class="form-group">
+
+                        <label>Class Teacher</label>
+
+                        <select id="classTeacher">
+
+                            <option value="">
+                                Select Class Teacher
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Subjects -->
+                    <div class="form-group full-width">
+
+                        <label>
+                            Subjects <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="subjects"
+                            placeholder="Example: Mathematics, English, Science, Hindi"
+                            required
+                        >
+
+                        <small>
+                            Enter subjects separated by commas.
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="modal-footer">
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        id="cancelBtn"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="save-class-btn"
+                    >
+                        Save Class
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/classes.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+   /* TABLET */
+
+   @media (max-width: 1100px) {
+
+       .sidebar {
+           width: 230px;
+       }
+
+       .main-content {
+           margin-left: 230px;
+
+           width: calc(100% - 230px);
+       }
+
+       .stats-grid {
+           grid-template-columns:
+               repeat(2, 1fr);
+       }
+
+       .dashboard-grid,
+       .bottom-grid {
+           grid-template-columns: 1fr;
+       }
+
+   }
+
+   /* MOBILE */
+
+   @media (max-width: 768px) {
+
+       .sidebar {
+           left: -260px;
+
+           width: 260px;
+       }
+
+       .sidebar.show {
+           left: 0;
+
+           box-shadow:
+               5px 0 25px rgba(0, 0, 0, 0.15);
+       }
+
+       .main-content {
+           margin-left: 0;
+
+           width: 100%;
+       }
+
+       .menu-toggle {
+           display: block;
+       }
+
+       .top-header {
+           padding: 0 15px;
+       }
+
+       .header-left h1 {
+           font-size: 20px;
+       }
+
+       .header-left p {
+           display: none;
+       }
+
+       .profile-info {
+           display: none;
+       }
+
+       .dashboard-content {
+           padding: 15px;
+       }
+
+       .stats-grid {
+           grid-template-columns: 1fr 1fr;
+
+           gap: 10px;
+       }
+
+       .stat-card {
+           padding: 15px;
+       }
+
+       .stat-card-content h2 {
+           font-size: 22px;
+       }
+
+       .stat-icon {
+           width: 42px;
+           height: 42px;
+
+           font-size: 19px;
+       }
+
+       .attendance-content {
+           gap: 25px;
+
+           justify-content: center;
+       }
+
+   }
+
+   /* SMALL MOBILE */
+
+   @media (max-width: 500px) {
+
+       .stats-grid {
+           grid-template-columns: 1fr;
+       }
+
+       .header-right {
+           gap: 8px;
+       }
+
+       .notification-button {
+           width: 35px;
+           height: 35px;
+       }
+
+       .admin-profile {
+           display: none;
+       }
+
+       .dashboard-card {
+           padding: 15px;
+       }
+
+       .attendance-content {
+           flex-direction: column;
+       }
+
+       .quick-actions {
+           grid-template-columns: 1fr;
+       }
+
+   }

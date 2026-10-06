@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - School Management System</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- DASHBOARD LAYOUT -->
+
+
+    <div class="dashboard-container">
+
+
+
+        <!-- SIDEBAR -->
+
+
+        <aside class="sidebar" id="sidebar">
+
+            <!-- Logo -->
+
+            <div class="sidebar-logo">
+
+                <div class="logo-icon">
+                    🎓
+                </div>
+
+                <div>
+                    <h2>DSP Public School</h2>
+                    <span>Management System</span>
+                </div>
+
+            </div>
+
+
+            <!-- Navigation -->
+
+            <nav class="sidebar-nav">
+
+                <p class="menu-title">
+                    MAIN MENU
+                </p>
+
+
+                <a href="dashboard.html" class="nav-link active">
+
+                    <span class="nav-icon">📊</span>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+
+                <a href="students.html" class="nav-link">
+
+                    <span class="nav-icon">👨‍🎓</span>
+
+                    <span>Students</span>
+
+                </a>
+
+
+                <a href="teachers.html" class="nav-link">
+
+                    <span class="nav-icon">👩‍🏫</span>
+
+                    <span>Teachers</span>
+
+                </a>
+
+
+                <a href="attendance.html" class="nav-link">
+
+                    <span class="nav-icon">📅</span>
+
+                    <span>Attendance</span>
+
+                </a>
+
+
+                <a href="classes.html" class="nav-link">
+
+                    <span class="nav-icon">📚</span>
+
+                    <span>Classes</span>
+
+                </a>
+
+
+                <p class="menu-title">
+                    ACADEMICS
+                </p>
+
+
+                <a href="exams.html" class="nav-link">
+
+                    <span class="nav-icon">📝</span>
+
+                    <span>Examinations</span>
+
+                </a>
+
+
+                <a href="results.html" class="nav-link">
+
+                    <span class="nav-icon">📈</span>
+
+                    <span>Results</span>
+
+                </a>
+
+
+                <p class="menu-title">
+                    MANAGEMENT
+                </p>
+
+
+                <a href="fees.html" class="nav-link">
+
+                    <span class="nav-icon">💰</span>
+
+                    <span>Fees</span>
+
+                </a>
+
+
+                <a href="notices.html" class="nav-link">
+
+                    <span class="nav-icon">📢</span>
+
+                    <span>Notice Board</span>
+
+                </a>
+
+            </nav>
+
+
+            <!-- Sidebar Bottom -->
+
+            <div class="sidebar-bottom">
+
+                <button class="logout-button" id="logoutButton">
+
+                    <span>🚪</span>
+
+                    <span>Logout</span>
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+
+
+        <!-- MAIN CONTENT -->
+
+
+        <main class="main-content">
+
+
+
+            <!-- TOP HEADER -->
+
+
+            <header class="top-header">
+
+
+                <div class="header-left">
+
+                    <button class="menu-toggle" id="menuToggle">
+                        ☰
+                    </button>
+
+
+                    <div>
+
+                        <h1>Dashboard</h1>
+
+                        <p>
+                            Welcome back, Administrator 👋
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="header-right">
+
+
+                    <!-- Notification -->
+
+                    <button class="notification-button">
+
+                        🔔
+
+                        <span class="notification-badge">
+                            3
+                        </span>
+
+                    </button>
+
+
+                    <!-- Profile -->
+
+                    <div class="admin-profile">
+
+                        <div class="profile-avatar">
+                            A
+                        </div>
+
+                        <div class="profile-info">
+
+                            <strong>Administrator</strong>
+
+                            <span>Admin</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+
+            <!-- DASHBOARD CONTENT -->
+
+
+            <section class="dashboard-content">
+
+
+                <!-- Statistics -->
+
+                <div class="stats-grid">
+
+
+                    <!-- Students -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-card-content">
+
+                            <p>Total Students</p>
+
+                            <h2 id="studentCount">
+                                520
+                            </h2>
+
+                            <span class="stat-growth positive">
+                                ↑ 12% this month
+                            </span>
+
+                        </div>
+
+                        <div class="stat-icon students-icon">
+                            👨‍🎓
+                        </div>
+
+                    </div>
+
+
+                    <!-- Teachers -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-card-content">
+
+                            <p>Total Teachers</p>
+
+                            <h2 id="teacherCount">
+                                35
+                            </h2>
+
+                            <span class="stat-growth positive">
+                                ↑ 4% this month
+                            </span>
+
+                        </div>
+
+                        <div class="stat-icon teachers-icon">
+                            👩‍🏫
+                        </div>
+
+                    </div>
+
+
+                    <!-- Classes -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-card-content">
+
+                            <p>Total Classes</p>
+
+                            <h2 id="classCount">
+                                18
+                            </h2>
+
+                            <span class="stat-growth">
+                                Academic Year 2026
+                            </span>
+
+                        </div>
+
+                        <div class="stat-icon classes-icon">
+                            📚
+                        </div>
+
+                    </div>
+
+
+                    <!-- Notices -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-card-content">
+
+                            <p>Active Notices</p>
+
+                            <h2 id="noticeCount">
+                                12
+                            </h2>
+
+                            <span class="stat-growth">
+                                3 new today
+                            </span>
+
+                        </div>
+
+                        <div class="stat-icon notices-icon">
+                            📢
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+                <!-- MIDDLE SECTION -->
+
+
+                <div class="dashboard-grid">
+
+
+                    <!-- Attendance -->
+
+                    <div class="dashboard-card attendance-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <h3>
+                                    Attendance Overview
+                                </h3>
+
+                                <p>
+                                    Today's attendance
+                                </p>
+
+                            </div>
+
+                            <select id="attendanceClass">
+
+                                <option>
+                                    All Classes
+                                </option>
+
+                                <option>
+                                    Class 10
+                                </option>
+
+                                <option>
+                                    Class 11
+                                </option>
+
+                                <option>
+                                    Class 12
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="attendance-content">
+
+
+                            <div class="attendance-circle">
+
+                                <div class="circle-inner">
+
+                                    <strong>
+                                        92%
+                                    </strong>
+
+                                    <span>
+                                        Present
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="attendance-details">
+
+                                <div class="attendance-item">
+
+                                    <span class="attendance-dot present">
+                                    </span>
+
+                                    <div>
+
+                                        <strong>
+                                            Present
+                                        </strong>
+
+                                        <span>
+                                            478 Students
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="attendance-item">
+
+                                    <span class="attendance-dot absent">
+                                    </span>
+
+                                    <div>
+
+                                        <strong>
+                                            Absent
+                                        </strong>
+
+                                        <span>
+                                            32 Students
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="attendance-item">
+
+                                    <span class="attendance-dot leave">
+                                    </span>
+
+                                    <div>
+
+                                        <strong>
+                                            On Leave
+                                        </strong>
+
+                                        <span>
+                                            10 Students
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Quick Actions -->
+
+                    <div class="dashboard-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <h3>
+                                    Quick Actions
+                                </h3>
+
+                                <p>
+                                    Frequently used actions
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="quick-actions">
+
+
+                            <a href="students.html" class="quick-action">
+
+                                <span>
+                                    ➕
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Add Student
+                                    </strong>
+
+                                    <small>
+                                        Register new student
+                                    </small>
+
+                                </div>
+
+                            </a>
+
+
+                            <a href="teachers.html" class="quick-action">
+
+                                <span>
+                                    👩‍🏫
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Add Teacher
+                                    </strong>
+
+                                    <small>
+                                        Add teaching staff
+                                    </small>
+
+                                </div>
+
+                            </a>
+
+
+                            <a href="attendance.html" class="quick-action">
+
+                                <span>
+                                    📅
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Mark Attendance
+                                    </strong>
+
+                                    <small>
+                                        Record today's attendance
+                                    </small>
+
+                                </div>
+
+                            </a>
+
+
+                            <a href="notices.html" class="quick-action">
+
+                                <span>
+                                    📢
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Create Notice
+                                    </strong>
+
+                                    <small>
+                                        Publish new announcement
+                                    </small>
+
+                                </div>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+                <!-- BOTTOM SECTION -->
+
+
+                <div class="dashboard-grid bottom-grid">
+
+
+                    <!-- Recent Students -->
+
+                    <div class="dashboard-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <h3>
+                                    Recent Students
+                                </h3>
+
+                                <p>
+                                    Recently registered students
+                                </p>
+
+                            </div>
+
+                            <a href="students.html" class="view-all">
+                                View All
+                            </a>
+
+                        </div>
+
+
+                        <div class="table-wrapper">
+
+                            <table>
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>
+                                            Student
+                                        </th>
+
+                                        <th>
+                                            Class
+                                        </th>
+
+                                        <th>
+                                            Roll No.
+                                        </th>
+
+                                        <th>
+                                            Status
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody>
+
+                                    <tr>
+
+                                        <td>
+                                            <div class="student-name">
+
+                                                <span class="student-avatar">
+                                                    RK
+                                                </span>
+
+                                                <span>
+                                                    Rahul Kumar
+                                                </span>
+
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            Class 10
+                                        </td>
+
+                                        <td>
+                                            1025
+                                        </td>
+
+                                        <td>
+                                            <span class="status active">
+                                                Active
+                                            </span>
+                                        </td>
+
+                                    </tr>
+
+
+                                    <tr>
+
+                                        <td>
+                                            <div class="student-name">
+
+                                                <span class="student-avatar">
+                                                    PS
+                                                </span>
+
+                                                <span>
+                                                    Priya Sharma
+                                                </span>
+
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            Class 9
+                                        </td>
+
+                                        <td>
+                                            0921
+                                        </td>
+
+                                        <td>
+                                            <span class="status active">
+                                                Active
+                                            </span>
+                                        </td>
+
+                                    </tr>
+
+
+                                    <tr>
+
+                                        <td>
+                                            <div class="student-name">
+
+                                                <span class="student-avatar">
+                                                    AS
+                                                </span>
+
+                                                <span>
+                                                    Aman Singh
+                                                </span>
+
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            Class 12
+                                        </td>
+
+                                        <td>
+                                            1245
+                                        </td>
+
+                                        <td>
+                                            <span class="status active">
+                                                Active
+                                            </span>
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Recent Notices -->
+
+                    <div class="dashboard-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <h3>
+                                    Recent Notices
+                                </h3>
+
+                                <p>
+                                    Latest announcements
+                                </p>
+
+                            </div>
+
+                            <a href="notices.html" class="view-all">
+                                View All
+                            </a>
+
+                        </div>
+
+
+                        <div class="notice-list">
+
+
+                            <div class="notice-item">
+
+                                <div class="notice-icon">
+                                    📅
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Annual Examination
+                                    </strong>
+
+                                    <p>
+                                        Annual examination starts
+                                        from 15 October.
+                                    </p>
+
+                                    <small>
+                                        2 hours ago
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="notice-item">
+
+                                <div class="notice-icon">
+                                    🏆
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Sports Day
+                                    </strong>
+
+                                    <p>
+                                        School sports day will be
+                                        held next month.
+                                    </p>
+
+                                    <small>
+                                        Yesterday
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="notice-item">
+
+                                <div class="notice-icon">
+                                    📚
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Library Books
+                                    </strong>
+
+                                    <p>
+                                        New books have been added
+                                        to the library.
+                                    </p>
+
+                                    <small>
+                                        2 days ago
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>
